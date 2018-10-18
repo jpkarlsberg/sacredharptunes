@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Wimpy Button Bridge - Example 1</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+
+<!-- START Wimpy Button Bridge Javascript-->
+<script src="wimpy_button_bridge.js" type="text/javascript"></script>
+<!-- START Wimpy Button Bridge Javascript-->
+
+
+
+<!-- START Wimpy Button Bridge Javascript Modifications -->
+<script language="javascript">
+// Here we are over-writing the variables locally.
+var wimpyButtonImagePlay	= "b_play_small.png";
+var wimpyButtonImagePause	= "b_pause_small.png";
+</script>
+<!-- END Wimpy Button Bridge Javascript Modifications -->
+
+
+
+</head>
+<body>
+
+<div id="warningBox" class="warning"><b>WARNING: </b>Due to the built-in security measures in the Adobe Flash plugin, and/or in your browser, this example <b>may not</b> work on a local PC. We recommend running the examples on a live server.</div>
+<p>
+  
+  
+<b>Example 3 </b></p>
+<p>Here we have multiple graphics calling different files. Clicking on one button will &quot;turn off&quot; the others. </p>
+<p><b>Example:</b></p>
+<table width="296" border="0" cellpadding="5" cellspacing="0">
+	<tbody><tr>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Rippen.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Rippen</p></td>
+	
+	  <td nowrap="nowrap">&nbsp;</td>
+	  <td width="21" nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Lost.mp3')"></p></td>
+	  <td width="184" nowrap="nowrap"><p>Lost</p></td>
+	</tr>
+	<tr>
+	  <td width="21" nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Elektra.mp3')"></p></td>
+	  <td width="103" nowrap="nowrap"><p>Elektra</p></td>
+	  <td width="4" nowrap="nowrap">&nbsp;</td>
+	
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Night.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Night</p></td>
+	</tr>
+	<tr>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Fire.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Fire</p></td>
+	  <td nowrap="nowrap">&nbsp;</td>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Don\'t Do Christmas Anymore.mp3')"></p></td>
+	
+	  <td nowrap="nowrap"><p>Don't Do Christmas</p></td>
+	</tr>
+	<tr>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Graduation.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Graduation.</p></td>
+	  <td nowrap="nowrap">&nbsp;</td>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Onya.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Onya</p></td>
+	
+	</tr>
+	<tr>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Hated.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Hated</p></td>
+	  <td nowrap="nowrap">&nbsp;</td>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Red Wolf.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Red Wolf</p></td>
+	</tr>
+	
+	<tr>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/I Don\'t Know.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>I Don't Know</p></td>
+	  <td nowrap="nowrap">&nbsp;</td>
+	  <td nowrap="nowrap"><p><img src="b_play_small.png" onClick="wimpyButtonPlayPause('http://www.wimpyplayer.com/examples/wb/samples/Rippen.mp3')"></p></td>
+	  <td nowrap="nowrap"><p>Rippen</p></td>
+	</tr>
+	
+	</tbody></table>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<p><b>Source Code </b></p>
+<p>The following line should go between the opening &lt;HEAD&gt; and closeing &lt;/HEAD&gt; tags of your page:</p>
+<p class="codedBox"><font color="#CC0000">&lt;script src=&quot;wimpy_button_bridge.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</font><br>
+&lt;script language=&quot;javascript&quot;&gt;<br>
+  <font color="#666666">// Here we are over-writing the variables locally to use the smaller buttons. </font><br>
+  <font color="#CC0000">wimpyButtonImagePlay	= &quot;b_play_small.png&quot;;<br>
+  wimpyButtonImagePause	= &quot;b_pause_small.png&quot;;</font><br>
+&lt;/script&gt;</p>
+<p>And this goes anywhere in the &lt;BODY&gt; </p>
+<p class="codedBox">&lt;img src=&quot;b_play_small.png&quot; onclick=&quot;<font color="#CC0000">wimpyButtonPlayPause('example.mp3')</font>&quot;&gt;</p>
+<p>&nbsp;</p>
+<p></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="fineprint"><strong><a href="http://www.wimpyplayer.com/docs/button/">Wimpy Button Documentation</a></strong> <br>
+        Copyright ©2002-2012 Plaino LLC. <a href="http://www.wimpyplayer.com/company/legal.html">All rights reserved</a>.<br>
+      Use of this website signifies your agreement to the <a href="http://www.wimpyplayer.com/company/legal.html">Terms of Use</a>. </span></p>
+</body>
+</html>

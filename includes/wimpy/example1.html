@@ -1,0 +1,61 @@
+<head>
+<title>Wimpy Button Bridge - Example 1</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+
+<div id="warningBox" class="warning"><b>WARNING: </b>Due to the built-in security measures in the Adobe Flash plugin, and/or in your browser, this example <b>may not</b> work on a local PC. We recommend running the examples on a live server.</div>
+<p>
+
+  
+<b>Example 1 </b></p>
+<p>Here we're using a PNG graphic. The graphic toggles to the pause state once it is clicked. </p>
+<p>URLs to the button states are defined within wimpy_button_bridge.js. We're simply using the same image in our HTML on this page as is defined in the Javascript file.</p>
+
+
+
+<!-- START Wimpy Button Bridge Javascript
+The following line can/should go between the 
+opening <HEAD> and closeing </HEAD> tags of your page. 
+But it's OK to include it in the BODY, as we are doing here.
+NOTE: You only need to include this line one time! (See example3.html)
+-->
+<script src="wimpy_button_bridge.js" type="text/javascript"></script>
+<!-- END Wimpy Button Bridge Javascript -->
+
+
+
+<!-- This is the code used to display the button and play the track: -->
+<img src="b_play.png" onClick="wimpyButtonPlayPause('example.mp3')">
+
+
+
+
+<p>&nbsp;</p>
+<p><b>Source Code </b></p>
+<p>The following line should go between the opening &lt;HEAD&gt; and closeing &lt;/HEAD&gt; tags of your page:</p>
+<p class="codedBox"><font color="#CC0000">&lt;script src=&quot;wimpy_button_bridge.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</font></p>
+<p>And this goes anywhere in the &lt;BODY&gt; </p>
+<p class="codedBox">&lt;a href=&quot;javascript:;&quot; onClick=&quot;<font color="#CC0000">wimpyButtonPlay('graduation.m4a')</font>&quot;&gt;<br>
+    <font color="#000000">Play</font><br>
+  &lt;/a&gt;<br>
+  <br>
+  &lt;a href=&quot;javascript:;&quot; onClick=&quot;<font color="#CC0000">wimpyButtonPause()</font>&quot;&gt;<br>
+  <font color="#000000">Pause</font><br>
+  &lt;/a&gt;</p>
+<p>&nbsp;</p>
+<p></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="fineprint"><strong><a href="http://www.wimpyplayer.com/docs/button/">Wimpy Button Documentation</a></strong> <br>
+        Copyright ©2002-2012 Plaino LLC. <a href="http://www.wimpyplayer.com/company/legal.html">All rights reserved</a>.<br>
+      Use of this website signifies your agreement to the <a href="http://www.wimpyplayer.com/company/legal.html">Terms of Use</a>. </span></p>
+</body>
+</html>

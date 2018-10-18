@@ -1,0 +1,191 @@
+.warning {
+	background-color: #FFC;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #900;
+	padding: 8px;
+	display: none;
+}
+* html, html, body {
+height: 100%;
+} 
+body {
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	background-color: #FFFFFF;
+}
+a {  color: #003399; text-decoration: none}
+a:hover {  text-decoration: underline}
+p {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000000;
+}
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.fineprint {
+	font-size: 10px;
+}
+.formInsertCode {
+	height: 300px;
+	width: 520px;
+}
+ol {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+
+}
+.func {
+	font-weight: bold;
+	color: #3300FF;
+}
+.param {
+	font-weight: bold;
+	color: #009900;
+}
+
+.displaycode {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+}
+.codeColor_html {
+	color: #CC6600;
+}
+pre {
+	line-height: normal;
+	color: #3300FF;
+}
+.coded {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	color: #3300FF;
+	white-space: pre;
+}
+.codedBox {
+	background-color: #EFEFEF;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	color: #3300FF;
+}
+ul {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+li {
+	list-style-type: none;
+}
+
+.featureTitle {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+blockquote {
+	margin-left: 17px;
+}
+.navPage {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+.navPage a:link {
+	color: #FFFFFF;
+}
+.navPage a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.navPage a:visited {
+	color: #FFFFFF;
+}
+.navPage a:active {
+	color: #FFFFFF;
+}.topProductTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+.sectionTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #000000;
+	color: #FFFFFF;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	vertical-align: middle;
+}
+.toc {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#headDiv {
+	position:relative;
+	z-index:1;
+	left: 0px;
+	top: 0px;
+}
+#menuDiv {
+	position:relative;
+	z-index:2;
+	left: 0px;
+	top: 0px;
+	white-space: nowrap;
+	padding: 10px;
+}
+.exampleLinks {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.exampleLinks a:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.exampleLinks a:visited {
+}
+.exampleLinks a:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+.exampleLinks a:active {
+	color: #FFFF00;
+	text-decoration: none;
+}
