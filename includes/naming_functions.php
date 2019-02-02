@@ -20,7 +20,7 @@ function neat_text ($text, $style = NULL, $abbrevlength = 50) {
 
 function filename ($username, $tuneid, $fileext, $filenum = NULL) {
 	$filename = $username."_".$tuneid;
-	if($fileext == ("mp3" || "m4a") && $filenum) { 
+	if($fileext == ("mp3" || "m4a") && $filenum) {
 		$filename .= "_".$filenum;
 	};
 	$filename .= ".".$fileext;
@@ -34,14 +34,20 @@ function formatted_mp3player ($username, $tuneid, $fileid, $fileext, $linktextfo
 	} else {
 		$titletext = "";
 	}
+	/*
+	* echotitle is full player,
+	* echo (default) is small direct link - steve-brett
+	 */
 	if ($action == "echotitle") {
 		$displaytext = mp3_filetitle($fileid);
+		$formatted_mp3player = "<audio height=\"25\" width=\"150\" controls> \n\t <source src=\"" . SITE_FILES_URL . $filename . "\" type=\"audio/mpeg\" data-title=\"$displaytext\"> \n\t <!-- fallback for non supporting browsers goes here --> \n\t <p><a ".$titletext." href=\"".SITE_FILES_URL.$filename."\" $fileext </a></p>\n\t</audio>\n\t<p>" . $displaytext . "</p>";
 	} else {
+		// Just give a link for now
 		$displaytext = $fileext;
+		$formatted_mp3player = "<a ".$titletext." href=\"" . SITE_FILES_URL . $filename . "\">" . $displaytext . "</a>";
 	}
-	$formatted_mp3player = "<a ".$titletext."href=\"javascript:;\" onClick=\"wimpyButtonPlayPause('".SITE_FILES_URL.$filename."')\">".$displaytext."</a>";
+	//$formatted_mp3player = "<a ".$titletext."href=\"javascript:;\" onClick=\"wimpyButtonPlayPause('".SITE_FILES_URL.$filename."')\">".$displaytext."</a>";
 	//$formatted_mp3player = "<img ".$titletext."src=\"".SITE_URL.SITE_INCLUDES_PATH."wimpy/b_play_sh.png\" onClick=\"wimpyButtonPlayPause('".SITE_FILES_URL.$filename."')\">";
-	//$formatted_mp3player = "<audio height=\"25\" width=\"150\" controls> <source src=\"".SITE_FILES_URL.$filename."\" type=\"audio/mpeg\"> Your browser does not support the audio element.</audio>";
 	//$formatted_mp3player = "<object type=\"application/x-shockwave-flash\" data=\"http://sacredharptunes.com/includes/button/musicplayer.swf?&song_url=".SITE_FILES_URL.$filename."&b_bgcolor=DDDDFF&b_fgcolor=7979a9&\" width=\"17\" height=\"17\"> <param name=\"movie\" value=\"http://sacredharptunes.com/includes/button/musicplayer.swf?&song_url=".SITE_FILES_URL.$filename."&b_bgcolor=DDDDFF&b_fgcolor=7979a9&\" /> <img src=\"noflash.gif\" width=\"17\" height=\"17\" alt=\"\" /> </object>";
 	if($action == "echo" || $action == "echotitle") {
 		echo $formatted_mp3player;
@@ -110,13 +116,13 @@ function readable_key ($keyfromdb, $action = "echo", $keymm = "both") {
 			$readable .= "&#9839;";
 		};
 		if(substr($keyfromdb, -1) == "m") {
-			$readable .= " minor "; 
+			$readable .= " minor ";
 		} else {
 			$readable .= " major ";
 		};
 	} elseif($keymm == "mm") {
 		if(substr($keyfromdb, -1) == "m") {
-			$readable .= "minor "; 
+			$readable .= "minor ";
 		} else {
 			$readable .= "major ";
 		};
