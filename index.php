@@ -24,7 +24,7 @@ if(mysql_num_rows($result) > 0) {
 	} elseif($tuneslug != "NULL") {
 		$err = "The tune you have requested could not be found.";
 	};
-} else { 
+} else {
 	$bywhat = "Composer";
 	if($com != "NULL") {
 		$err = "There is no composer named \"$com\" sharing tunes through this site.";
@@ -113,13 +113,13 @@ if($userobj && !$tuneobj) {
 		}
 		$pubtunes = substr($pubtunes, 0, -2).")";
 	}
-	
+
 	$cutoff_date = date("Y-m-d H:i:s", time() - (8 * 7 * 24 * 60 * 60)); /* 8 weeks ago */
 	$query = "SELECT * FROM activity WHERE tunesmithid = '$userid' AND tuneid IN $pubtunes AND actiondate > '$cutoff_date' AND "
 			."(action LIKE '%public%' OR action = 'edit text' OR action = 'edit type' OR action = 'edit tune name') " // add edit user info somehow
 			."ORDER BY actiondate DESC";
 	$result = mysql_query($query) or die("<p>Error in query: $query. ".mysql_error()."</p>");
-	
+
 	if(mysql_num_rows($result) > 0) {
 		echo "<p>Recent activity: \n";
 		while($row = mysql_fetch_object($result)) {
@@ -127,24 +127,24 @@ if($userobj && !$tuneobj) {
 			$query_pr = "SELECT activityid FROM activity WHERE action = '$reverse_action' AND tuneid = ".$row->tuneid." AND actiondate > '".$row->actiondate."'";
 			$result_pr = mysql_query($query_pr) or die("<p>Error in query: $query_pr. ".mysql_error()."</p>");
 			if(mysql_num_rows($result_pr) > 0) { $do_not_display = 1; };
-			
+
 			if(!$do_not_display && $count < 5) {
 				if($row->tuneid) {
 					$query_t = "SELECT name FROM tunes WHERE id = ".$row->tuneid." LIMIT 1";
 					$result_t = mysql_query($query_t) or die("<p>Error in query: $query_t. ".mysql_error()."</p>");
 					if(mysql_num_rows($result_t) > 0) { $row_t = mysql_fetch_object($result_t); $tune_name = stripslashes($row_t->name); } else { $tune_name = "deleted"; };
 				};
-		
+
 				$query_a = "SELECT actiontext FROM actions WHERE action = '".$row->action."'";
 				$result_a = mysql_query($query_a) or die("<p>Error in query: $query_a. ".mysql_error()."</p>");
 				if(mysql_num_rows($result_a) > 0) { $row_a = mysql_fetch_object($result_a); $act = str_replace("--tune--", "<span class=\"success\">$tune_name</span>", $row_a->actiontext); } else { $act = $row->action; };
-		
+
 				if($row->action == "make mp3 public") {
 					$query_m = "SELECT title FROM uploadedfiles WHERE id = '".$row->actiondesc."'";
 					$result_m = mysql_query($query_m) or die("<p>Error in query: $query_m. ".mysql_error()."</p>");
 					if(mysql_num_rows($result_m) > 0) { $row_m = mysql_fetch_object($result_m); $act = str_replace("--mp3title--", "'".stripslashes($row_m->title)."'", $act); };
 				};
-				
+
 				if($count != 0) { echo " &hellip; "; };
 				echo "<strong>".relative_date(strtotime($row->actiondate))."</strong>: ".$act;
 				$count ++;
@@ -155,10 +155,10 @@ if($userobj && !$tuneobj) {
 		echo ".</p>\n\n";
 	}
 	/* END RECENT ACTIVITY */
-		
+
 	$query = "SELECT * FROM tunes WHERE public = 1 AND tunesmithid = '$userid' ORDER BY rank, name";
 	$result = mysql_query($query) or die("<p>Error in query: $query. ".mysql_error()."</p>");
-	
+
 	if (mysql_num_rows($result) > 0) {
 		if ($userobj->username == "jesse" || $userobj->username == "lauren") {
 			echo "<table class=\"vibrant\" width=\"100%\">\n\n<thead>\n";
@@ -181,9 +181,9 @@ if($userobj && !$tuneobj) {
 				echo "(".$row->year;
 					if($row->additionalyear != 0) { echo "&ndash;".($row->additionalyear - 2000); };
 					echo ")";
-				echo " • ";
+				echo " &#8226; ";
 				readable_key($row->tunekey, "echo", "mm");
-				echo strtolower($row->type)." • ";
+				echo strtolower($row->type)." &#8226; ";
 				if($row->modeoftime == "mul") { echo "multiple modes of time"; } else { echo $row->modeoftime." time"; };
 				echo "</td>\n";
 				echo "<td>".neat_text($row->text, "first line")."</td>\n";
@@ -191,7 +191,7 @@ if($userobj && !$tuneobj) {
 				$first = 1;
 				$mp3_count = 0;
 				while($rowfiles = mysql_fetch_object($resultfiles)) {
-					if($first != 1) { echo " • "; } else { $first = 0; };
+					if($first != 1) { echo " &#8226; "; } else { $first = 0; };
 					if($rowfiles->fileext == "mp3" && $mult_mp3s == 1) {
 					$mp3_count ++;
 						$format = $mp3_count;
@@ -226,7 +226,7 @@ if($userobj && !$tuneobj) {
 				$first = 1;
 				$mp3_count = 0;
 				while($rowfiles = mysql_fetch_object($resultfiles)) {
-					if($first != 1) { echo " • "; } else { $first = 0; };
+					if($first != 1) { echo " &#8226; "; } else { $first = 0; };
 					if($rowfiles->fileext == "mp3" && $mult_mp3s == 1) {
 					$mp3_count ++;
 						$format = $mp3_count;
@@ -267,7 +267,7 @@ if($userobj && !$tuneobj) {
 			$result = mysql_query($query) or die("<p>Error in query: $query. ".mysql_error()."</p>");
 			$queryfiles = "SELECT id FROM uploadedfiles WHERE public = 1 ";
 			$resultfiles = mysql_query($queryfiles) or die("<p>Error in query: $query. ".mysql_error()."</p>");
-			
+
 			if (mysql_num_rows($result) > 0 && mysql_num_rows($resultfiles) > 0) {
 			?>
 				<table width="100%"><thead>
@@ -280,7 +280,7 @@ if($userobj && !$tuneobj) {
 				while($row = mysql_fetch_object($result)) {
 					$querytunes = "SELECT * FROM tunes WHERE tunesmithid = '$row->id' AND public = 1";
 					$resulttunes = mysql_query($querytunes) or die("<p>Error in query: $querytunes. ".mysql_error()."</p>");
-		
+
 					$queryfilestunes = "SELECT * FROM uploadedfiles WHERE tunesmithid = '$row->id' AND public = 1";
 					$resultfilestunes = mysql_query($queryfilestunes) or die("<p>Error in query: $querytunes. ".mysql_error()."</p>");
 					if(mysql_num_rows($resulttunes) > 0 && mysql_num_rows($resultfilestunes) > 0) {
