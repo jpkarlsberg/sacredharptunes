@@ -321,5 +321,6 @@ try {
 var pageTracker = _gat._getTracker("UA-3336718-15");
 pageTracker._trackPageview();
 } catch(err) {}</script>
+<script src="/scripts/multiPlayer.js" type="text/javascript"></script>
 </body>
 </html>
