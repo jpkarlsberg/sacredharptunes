@@ -34,7 +34,9 @@ a:link:hover, a:visited:hover { color: #151554; text-decoration: underline; }
 
 ul { list-style: none; }
 
-ul.recordings { list-style: circle; }
+ul.recordings { padding-left: 0; }
+ul.recordings li p {display: inline; padding-left:1em;}
+audio { vertical-align: middle; margin: 4px 0; }
 
 ul#menu li { padding: 0; }
 ul#menu li a:link, ul#menu li a:visited { padding: 5px 0; width: 100%; position: relative; display: block; }
@@ -55,8 +57,8 @@ thead td { color: #151554; background: #c9c9ee; padding: 5px 2px 3px; border-bot
 thead td a:link, thead td a:visited { color: #151554; }
 td .subtle { /* white-space: nowrap; */ }
 
-table td.tunes_firstline { min-width: 225px; } 
-table td.tunes_type { width: 120px; } 
+table td.tunes_firstline { min-width: 225px; }
+table td.tunes_type { width: 120px; }
 table td.tunes_tools { width: 130px; }
 
 form { display: inline; }
