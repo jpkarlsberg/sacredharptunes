@@ -2,7 +2,7 @@
 require("secret.php");
 
 	/* name variables */
-	define("ADMIN_NAME", "Jesse Pearlman Karlsberg");
+	define("ADMIN_NAME", "Jesse P. Karlsberg");
 	define("ADMIN_NICKNAME", "Jesse");
 	define("ADMIN_EMAIL", "jesse@silversand.org");
 
