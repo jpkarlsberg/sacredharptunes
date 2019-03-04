@@ -2,9 +2,9 @@
 
 /* connnection variables */
 define("DB_SERVER", "localhost");
-define("DB_USER", "REDACTED");
-define("DB_PASS", "REDACTED");
-define("DB_NAME", "REDACTED");
+define("DB_USER", "silver_shtunes");
+define("DB_PASS", "dyingcalifornian410t");
+define("DB_NAME", "silver_tunes");
 
 /* AWS variables */
 define("AWS_ACCESS_KEY", "REDACTED");
