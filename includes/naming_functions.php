@@ -40,7 +40,7 @@ function formatted_mp3player ($username, $tuneid, $fileid, $fileext, $linktextfo
 	 */
 	if ($action == "echotitle") {
 		$displaytext = mp3_filetitle($fileid);
-		$formatted_mp3player = "<audio height=\"25\" width=\"150\" controls> \n\t <source src=\"" . SITE_FILES_URL . $filename . "\" type=\"audio/mpeg\" data-title=\"$displaytext\"> \n\t <!-- fallback for non supporting browsers goes here --> \n\t <p><a ".$titletext." href=\"".SITE_FILES_URL.$filename."\" $fileext </a></p>\n\t</audio>\n\t<p>" . $displaytext . "</p>";
+		$formatted_mp3player = "<audio height=\"25\" width=\"150\" controls> \n\t <source src=\"" . SITE_FILES_URL . $filename . "\" type=\"audio/mpeg\" data-title=\"$displaytext\"> \n\t <!-- fallback for non supporting browsers goes here --> \n\t <p><a ".$titletext." href=\"".SITE_FILES_URL.$filename."\"> $fileext </a></p>\n\t</audio>\n\t<p>" . $displaytext . "</p>";
 	} else {
 		// Just give a link for now
 		$displaytext = $fileext;
